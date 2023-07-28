@@ -1,6 +1,7 @@
 from datetime import date
 from engine.capulet_engine import CapuletEngine 
 from engine.default_battery import DefaultBattery
+from tire import CarriganTire
 from car import Car
 
 class CarFactory:
@@ -9,4 +10,5 @@ class CarFactory:
         
         engine = CapuletEngine(last_service_mileage, current_mileage)
         battery = DefaultBattery(last_service_date, current_date)
-        return Car(engine, battery)
+        tire = CarriganTire
+        return Car(engine, battery, tire)
